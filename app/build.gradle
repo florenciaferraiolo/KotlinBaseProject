@@ -1,0 +1,55 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    def androidConfig = rootProject.ext
+
+    compileSdk androidConfig.compileSdk
+
+    defaultConfig {
+        applicationId "com.mobile.tandil.kotlinbaseproject"
+        minSdk androidConfig.minSdkVersion
+        targetSdk androidConfig.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility androidConfig.sourceCompatibility
+        targetCompatibility androidConfig.targetCompatibility
+    }
+    kotlinOptions {
+        jvmTarget = androidConfig.jvmTarget
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+
+    def generalDependencies = rootProject.ext.generalDependencies
+    def generalTestDependencies = rootProject.ext.generalTestDependencies
+    def androidTestDependencies = rootProject.ext.generalAndroidTestDependencies
+
+    implementation generalDependencies.coreKtx
+    implementation generalDependencies.appcompat
+    implementation generalDependencies.material
+    implementation generalDependencies.constraintlayout
+
+    testImplementation generalTestDependencies.junit
+
+    androidTestImplementation androidTestDependencies.testExtJunit
+    androidTestImplementation androidTestDependencies.espresso
+}
