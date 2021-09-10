@@ -3,6 +3,8 @@ plugins {
     id 'kotlin-android'
 }
 
+apply from: '../buildsystem/ktlint.gradle'
+
 android {
     def androidConfig = rootProject.ext
 
