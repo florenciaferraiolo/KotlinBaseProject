@@ -22,23 +22,23 @@ ext {
     espresso = "3.4.0"
 
     classpathDependencies = [
-            buildVersion                    : "com.android.tools.build:gradle:${build_version}",
-            kotlingGradlePlugin             : "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlin_version}"
+        buildVersion       : "com.android.tools.build:gradle:${build_version}",
+        kotlingGradlePlugin: "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlin_version}"
     ]
 
     generalDependencies = [
-            coreKtx             : "androidx.core:core-ktx:${core_ktx}",
-            appcompat           : "androidx.appcompat:appcompat:${app_compat}",
-            constraintlayout    : "androidx.constraintlayout:constraintlayout:${constraint_layout}",
-            material            : "com.google.android.material:material:${material}"
+        coreKtx         : "androidx.core:core-ktx:${core_ktx}",
+        appcompat       : "androidx.appcompat:appcompat:${app_compat}",
+        constraintlayout: "androidx.constraintlayout:constraintlayout:${constraint_layout}",
+        material        : "com.google.android.material:material:${material}"
     ]
 
     generalTestDependencies = [
-            junit                   : "junit:junit:${junit}"
+        junit: "junit:junit:${junit}"
     ]
 
     generalAndroidTestDependencies = [
-            testExtJunit  : "androidx.test.ext:junit:${ext_junit}",
-            espresso  : "androidx.test.espresso:espresso-core:${espresso}"
+        testExtJunit: "androidx.test.ext:junit:${ext_junit}",
+        espresso    : "androidx.test.espresso:espresso-core:${espresso}"
     ]
 }
