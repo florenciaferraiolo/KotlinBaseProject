@@ -30,7 +30,8 @@ ext {
         coreKtx         : "androidx.core:core-ktx:${core_ktx}",
         appcompat       : "androidx.appcompat:appcompat:${app_compat}",
         constraintlayout: "androidx.constraintlayout:constraintlayout:${constraint_layout}",
-        material        : "com.google.android.material:material:${material}"
+        material        : "com.google.android.material:material:${material}",
+        lifecycleViewmodel      : "androidx.lifecycle:lifecycle-viewmodel"
     ]
 
     generalTestDependencies = [
