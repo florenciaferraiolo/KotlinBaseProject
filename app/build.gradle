@@ -49,7 +49,7 @@ dependencies {
     implementation generalDependencies.appcompat
     implementation generalDependencies.material
     implementation generalDependencies.constraintlayout
-    implementation 'androidx.lifecycle:lifecycle-viewmodel'
+    implementation generalDependencies.lifecycleViewmodel
 
     testImplementation generalTestDependencies.junit
 
