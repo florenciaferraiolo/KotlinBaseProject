@@ -37,11 +37,6 @@ android {
     lintOptions {
         abortOnError false
     }
-
-    buildFeatures {
-        viewBinding true
-    }
-
 }
 
 dependencies {
@@ -54,7 +49,7 @@ dependencies {
     implementation generalDependencies.appcompat
     implementation generalDependencies.material
     implementation generalDependencies.constraintlayout
-    implementation generalDependencies.lifecycleViewmodel
+    implementation 'androidx.lifecycle:lifecycle-viewmodel'
 
     testImplementation generalTestDependencies.junit
 
