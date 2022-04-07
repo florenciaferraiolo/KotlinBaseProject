@@ -7,23 +7,23 @@
     tools:context=".activity.MainActivity">
 
     <TextView
-        android:id="@+id/welcome_text_field"
+        android:id="@+id/parking_available_text_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/welcome_text_field_text"
+        android:text="@integer/parking_available_field_text"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/check_button"
+        app:layout_constraintBottom_toTopOf="@id/update_button"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
     <Button
-        android:id="@+id/check_button"
+        android:id="@+id/update_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/check_button_text"
-        app:layout_constraintTop_toBottomOf="@id/welcome_text_field"
+        android:text="@string/update_button_text"
+        app:layout_constraintTop_toBottomOf="@id/parking_available_text_field"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
