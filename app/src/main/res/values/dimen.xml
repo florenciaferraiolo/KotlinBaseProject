@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="edit_text_width_parking_size_update_dialog_fragment">250dp</dimen>
+    <dimen name="edit_text_height_parking_size_update_dialog_fragment">80dp</dimen>
+
+    <dimen name="text_view_size_parking_size_update_dialog_fragment">16sp</dimen>
+
+    <dimen name="margin_bottom_parking_size_update_dialog_fragment">20dp</dimen>
+    <dimen name="margin_top_parking_size_update_dialog_fragment">20dp</dimen>
+    <dimen name="margin_left_parking_size_update_dialog_fragment">0dp</dimen>
+    <dimen name="margin_right_parking_size_update_dialog_fragment">0dp</dimen>
+</resources>

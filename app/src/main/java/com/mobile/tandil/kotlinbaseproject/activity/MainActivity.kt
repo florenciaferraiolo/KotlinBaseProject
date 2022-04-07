@@ -1,18 +1,20 @@
 package com.mobile.tandil.kotlinbaseproject.activity
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.mobile.tandil.kotlinbaseproject.R
 import com.mobile.tandil.kotlinbaseproject.databinding.ActivityMainBinding
-import com.mobile.tandil.kotlinbaseproject.mvvm.viewmodel.MainViewModel
-import com.mobile.tandil.kotlinbaseproject.mvvm.viewmodel.MainViewModel.CheckData
+import com.mobile.tandil.kotlinbaseproject.fragment.ParkingSizeUpdateDialogFragment
+import com.mobile.tandil.kotlinbaseproject.listener.ListenerSetParkingSpaces
+import com.mobile.tandil.kotlinbaseproject.mvvm.model.MainModel
 import com.mobile.tandil.kotlinbaseproject.mvvm.viewmodel.MainViewModel.CheckState
+import com.mobile.tandil.kotlinbaseproject.mvvm.viewmodel.MainViewModel
+import com.mobile.tandil.kotlinbaseproject.mvvm.viewmodel.MainViewModel.ParkingData
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ListenerSetParkingSpaces {
 
     private lateinit var binding: ActivityMainBinding
-    private val viewModel = MainViewModel()
+    private val model = MainModel()
+    private val viewModel = MainViewModel(model)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,20 +27,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setListeners() {
-        binding.checkButton.setOnClickListener {
-            viewModel.initValue()
+        binding.updateButton.setOnClickListener {
+            viewModel.showParkingSizeFragment()
         }
     }
 
-    private fun updateUI(data: CheckData) {
+    private fun updateUI(data: ParkingData) {
         when (data.state) {
-            CheckState.INITIAL -> {
-                showToast(getString(R.string.main_activity_toast_initial_text))
+            CheckState.SHOW_FRAGMENT -> {
+                val newFragment: ParkingSizeUpdateDialogFragment = ParkingSizeUpdateDialogFragment.newInstance(this@MainActivity)
+                newFragment.show(supportFragmentManager, ParkingSizeUpdateDialogFragment.MAIN_DIALOG_KEY)
             }
         }
     }
 
-    private fun showToast(text: String) {
-        Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
+    override fun listenerParkingSpaces(parkingSpaces: String) {
+        binding.parkingAvailableTextField.text = parkingSpaces
+        viewModel.updateParkingAvailableValue(parkingSpaces)
     }
 }

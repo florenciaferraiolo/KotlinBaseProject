@@ -1,25 +1,32 @@
 package com.mobile.tandil.kotlinbaseproject.mvvm.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.mobile.tandil.kotlinbaseproject.mvvm.model.MainModel
 
-class MainViewModel : ViewModel() {
+class MainViewModel(model: MainModel) : ViewModel() {
 
-    private val mutableLiveData: MutableLiveData<CheckData> = MutableLiveData()
+    private val mainModel = model
+    private val mutableLiveData: MutableLiveData<ParkingData> = MutableLiveData()
 
-    fun getValue(): MutableLiveData<CheckData> {
+    fun getValue(): LiveData<ParkingData> {
         return mutableLiveData
     }
 
-    fun initValue() {
-        mutableLiveData.value = CheckData(CheckState.INITIAL)
+    fun updateParkingAvailableValue(parkingAvailableUpdate: String) {
+        mainModel.updateParkingSpacesAvailable(parkingAvailableUpdate)
     }
 
-    data class CheckData(
-        val state: CheckState = CheckState.INITIAL
+    fun showParkingSizeFragment() {
+        mutableLiveData.value = ParkingData(CheckState.SHOW_FRAGMENT)
+    }
+
+    data class ParkingData(
+        val state: CheckState
     )
 
     enum class CheckState {
-        INITIAL
+        SHOW_FRAGMENT
     }
 }

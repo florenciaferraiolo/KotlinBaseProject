@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">KotlinBaseProject</string>
-    <string name="welcome_text_field_text">Hola!</string>
-    <string name="check_button_text">OK</string>
-    <string name="main_activity_toast_initial_text">OK!</string>
+    <string name="update_button_text">Update</string>
+    <string name="main_activity_toast_initial_text">Updated</string>
+    <string name="confirm_button_text">Confirm</string>
+    <string name="cancel_button_text">Cancel</string>
+    <string name="fragment_tittle_text">Enter the parking number available:</string>
 </resources>
