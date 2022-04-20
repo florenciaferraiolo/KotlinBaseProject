@@ -16,20 +16,21 @@ class ParkingSizeUpdateDialogViewModel(model: ParkingSizeUpdateDialogModel) : Vi
     }
 
     fun sendListener(parkingSpacesUpdate: String) {
-        mutableLiveData.value = ParkingSpaceData(CheckState.SEND_LISTERNER, parkingSpacesUpdate)
+        mutableLiveData.value = ParkingSpaceData(CheckState.SEND_LISTENER, parkingSpacesUpdate)
         modelUpdate.updateParkingSpaces(parkingSpacesUpdate)
     }
 
     fun closeDialog() {
-        mutableLiveData.value = ParkingSpaceData(CheckState.CLOSE_DIALOG, Constants.EMPTY_STRING_KEY)
+        mutableLiveData.value = ParkingSpaceData(CheckState.CLOSE_DIALOG, Constants.EMPTY_STRING)
     }
 
     data class ParkingSpaceData(
         val state: CheckState,
         val size: String
     )
+
     enum class CheckState {
-        SEND_LISTERNER,
+        SEND_LISTENER,
         CLOSE_DIALOG
     }
 }

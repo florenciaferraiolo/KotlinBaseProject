@@ -9,8 +9,8 @@ import com.mobile.tandil.kotlinbaseproject.databinding.FragmentParkingSizeUpdate
 import com.mobile.tandil.kotlinbaseproject.listener.ListenerSetParkingSpaces
 import com.mobile.tandil.kotlinbaseproject.mvvm.model.ParkingSizeUpdateDialogModel
 import com.mobile.tandil.kotlinbaseproject.mvvm.viewmodel.ParkingSizeUpdateDialogViewModel
-import com.mobile.tandil.kotlinbaseproject.mvvm.viewmodel.ParkingSizeUpdateDialogViewModel.ParkingSpaceData
 import com.mobile.tandil.kotlinbaseproject.mvvm.viewmodel.ParkingSizeUpdateDialogViewModel.CheckState
+import com.mobile.tandil.kotlinbaseproject.mvvm.viewmodel.ParkingSizeUpdateDialogViewModel.ParkingSpaceData
 import com.mobile.tandil.kotlinbaseproject.utils.Constants
 
 class ParkingSizeUpdateDialogFragment() : DialogFragment() {
@@ -45,7 +45,7 @@ class ParkingSizeUpdateDialogFragment() : DialogFragment() {
 
     private fun updateUI(data: ParkingSpaceData) {
         when (data.state) {
-            CheckState.SEND_LISTERNER -> {
+            CheckState.SEND_LISTENER -> {
                 listener.listenerParkingSpaces(viewModel.getValue().value?.size.toString())
                 dismiss()
             }
@@ -63,6 +63,7 @@ class ParkingSizeUpdateDialogFragment() : DialogFragment() {
             fragment.arguments = bundle
             return fragment
         }
+
         const val MAIN_DIALOG_KEY: String = "mainDialog"
     }
 }

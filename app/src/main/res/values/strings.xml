@@ -1,8 +1,19 @@
 <resources>
+    <!--activity_main-->
     <string name="app_name">KotlinBaseProject</string>
     <string name="update_button_text">Update</string>
+    <string name="parking_stay_button_text">Parking Stay</string>
     <string name="main_activity_toast_initial_text">Updated</string>
+
+    <!--fragment_parking_size_update_dialog-->
+    <string name="fragment_tittle_text">Enter the parking number available:</string>
     <string name="confirm_button_text">Confirm</string>
     <string name="cancel_button_text">Cancel</string>
-    <string name="fragment_tittle_text">Enter the parking number available:</string>
+
+    <!--activity_parking_stay-->
+    <string name="date_start_text">Entry date time</string>
+    <string name="date_end_text">Exit date time</string>
+    <string name="date_time_button">Select</string>
+    <string name="parking_lot_text">Select Parking Lot</string>
+    <string name="security_code_text">Select Security Code</string>
 </resources>

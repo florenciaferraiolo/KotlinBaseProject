@@ -19,7 +19,11 @@ class MainViewModel(model: MainModel) : ViewModel() {
     }
 
     fun showParkingSizeFragment() {
-        mutableLiveData.value = ParkingData(CheckState.SHOW_FRAGMENT)
+        mutableLiveData.value = ParkingData(CheckState.SHOW_SIZE_FRAGMENT)
+    }
+
+    fun showParkingStayFragment() {
+        mutableLiveData.value = ParkingData(CheckState.SHOW_STAY_ACTIVITY)
     }
 
     data class ParkingData(
@@ -27,6 +31,7 @@ class MainViewModel(model: MainModel) : ViewModel() {
     )
 
     enum class CheckState {
-        SHOW_FRAGMENT
+        SHOW_SIZE_FRAGMENT,
+        SHOW_STAY_ACTIVITY
     }
 }
