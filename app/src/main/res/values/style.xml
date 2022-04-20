@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextViewSelectedStyleParkingStayActivity">
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="TextViewStyleParkingStayActivity" parent="TextViewSelectedStyleParkingStayActivity">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
+    </style>
+
+    <style name="EditTextStyleParkingStayActivity" parent="TextViewSelectedStyleParkingStayActivity">
+        <item name="android:backgroundTint">@color/white</item>
+    </style>
+
+    <style name="ButtonStyleParkingStayActivity" parent="EditTextStyleParkingStayActivity">
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>

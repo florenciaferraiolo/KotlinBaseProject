@@ -6,8 +6,8 @@ import com.mobile.tandil.kotlinbaseproject.databinding.ActivityMainBinding
 import com.mobile.tandil.kotlinbaseproject.fragment.ParkingSizeUpdateDialogFragment
 import com.mobile.tandil.kotlinbaseproject.listener.ListenerSetParkingSpaces
 import com.mobile.tandil.kotlinbaseproject.mvvm.model.MainModel
-import com.mobile.tandil.kotlinbaseproject.mvvm.viewmodel.MainViewModel.CheckState
 import com.mobile.tandil.kotlinbaseproject.mvvm.viewmodel.MainViewModel
+import com.mobile.tandil.kotlinbaseproject.mvvm.viewmodel.MainViewModel.CheckState
 import com.mobile.tandil.kotlinbaseproject.mvvm.viewmodel.MainViewModel.ParkingData
 
 class MainActivity : AppCompatActivity(), ListenerSetParkingSpaces {
@@ -30,13 +30,19 @@ class MainActivity : AppCompatActivity(), ListenerSetParkingSpaces {
         binding.updateButton.setOnClickListener {
             viewModel.showParkingSizeFragment()
         }
+        binding.parkingStayButton.setOnClickListener {
+            viewModel.showParkingStayFragment()
+        }
     }
 
     private fun updateUI(data: ParkingData) {
         when (data.state) {
-            CheckState.SHOW_FRAGMENT -> {
+            CheckState.SHOW_SIZE_FRAGMENT -> {
                 val newFragment: ParkingSizeUpdateDialogFragment = ParkingSizeUpdateDialogFragment.newInstance(this@MainActivity)
                 newFragment.show(supportFragmentManager, ParkingSizeUpdateDialogFragment.MAIN_DIALOG_KEY)
+            }
+            CheckState.SHOW_STAY_ACTIVITY -> {
+                startActivity(ParkingStayActivity.newIntent(this))
             }
         }
     }

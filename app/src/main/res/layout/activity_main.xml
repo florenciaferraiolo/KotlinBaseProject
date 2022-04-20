@@ -22,6 +22,16 @@
         android:layout_height="wrap_content"
         android:text="@string/update_button_text"
         app:layout_constraintTop_toBottomOf="@id/parking_available_text_field"
+        app:layout_constraintBottom_toTopOf="@id/parking_stay_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+        android:id="@+id/parking_stay_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/parking_stay_button_text"
+        app:layout_constraintTop_toBottomOf="@id/update_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>

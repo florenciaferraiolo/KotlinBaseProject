@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_parking_stay"
+    tools:context=".activity.ParkingStayActivity">
+
+    <TextView
+        style="@style/TextViewStyleParkingStayActivity"
+        android:id="@+id/start_date_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date_start_text"
+        app:layout_constraintBottom_toTopOf="@id/end_date_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/start_time_selected_text_view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        style="@style/TextViewSelectedStyleParkingStayActivity"
+        android:id="@+id/start_date_selected_text_view"
+        android:layout_width="@dimen/text_view_width_parking_stay_activity"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/start_time_selected_text_view"
+        app:layout_constraintStart_toEndOf="@id/start_date_text_view"
+        app:layout_constraintEnd_toStartOf="@id/start_date_time_button"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        style="@style/TextViewSelectedStyleParkingStayActivity"
+        android:id="@+id/start_time_selected_text_view"
+        android:layout_width="@dimen/text_view_width_parking_stay_activity"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/end_date_selected_text_view"
+        app:layout_constraintStart_toEndOf="@id/start_date_text_view"
+        app:layout_constraintEnd_toStartOf="@id/start_date_time_button"
+        app:layout_constraintTop_toBottomOf="@id/start_date_selected_text_view" />
+
+    <TextView
+        style="@style/TextViewStyleParkingStayActivity"
+        android:id="@+id/end_date_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date_end_text"
+        app:layout_constraintBottom_toTopOf="@id/parking_lot_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/end_time_selected_text_view"
+        app:layout_constraintTop_toBottomOf="@id/start_date_text_view" />
+
+    <TextView
+        style="@style/TextViewSelectedStyleParkingStayActivity"
+        android:id="@+id/end_date_selected_text_view"
+        android:layout_width="@dimen/text_view_width_parking_stay_activity"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/end_time_selected_text_view"
+        app:layout_constraintStart_toEndOf="@id/end_date_text_view"
+        app:layout_constraintEnd_toStartOf="@id/end_date_time_button"
+        app:layout_constraintTop_toBottomOf="@id/start_time_selected_text_view" />
+
+    <TextView
+        style="@style/TextViewSelectedStyleParkingStayActivity"
+        android:id="@+id/end_time_selected_text_view"
+        android:layout_width="@dimen/text_view_width_parking_stay_activity"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/parking_lot_edit_text"
+        app:layout_constraintStart_toEndOf="@id/end_date_text_view"
+        app:layout_constraintEnd_toStartOf="@id/end_date_time_button"
+        app:layout_constraintTop_toBottomOf="@id/end_date_selected_text_view" />
+
+    <TextView
+        style="@style/TextViewStyleParkingStayActivity"
+        android:id="@+id/parking_lot_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/parking_lot_text"
+        app:layout_constraintBottom_toTopOf="@id/security_code_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/parking_lot_edit_text"
+        app:layout_constraintTop_toBottomOf="@id/end_date_text_view" />
+
+    <EditText
+        android:id="@+id/parking_lot_edit_text"
+        style="@style/EditTextStyleParkingStayActivity"
+        android:layout_width="@dimen/edit_text_width_parking_stay_activity"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@id/parking_lot_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/parking_lot_text_view"
+        app:layout_constraintTop_toTopOf="@id/parking_lot_text_view"/>
+
+    <TextView
+        style="@style/TextViewStyleParkingStayActivity"
+        android:id="@+id/security_code_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/security_code_text"
+        app:layout_constraintBottom_toTopOf="@id/cancel_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/security_code_edit_text"
+        app:layout_constraintTop_toBottomOf="@id/parking_lot_text_view" />
+
+    <EditText
+        android:id="@+id/security_code_edit_text"
+        style="@style/EditTextStyleParkingStayActivity"
+        android:layout_width="@dimen/edit_text_width_parking_stay_activity"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@id/security_code_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/security_code_text_view"
+        app:layout_constraintTop_toTopOf="@id/security_code_text_view"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        style="@style/ButtonStyleParkingStayActivity"
+        android:id="@+id/start_date_time_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date_time_button"
+        app:layout_constraintBottom_toTopOf="@id/end_date_time_button"
+        app:layout_constraintStart_toEndOf="@id/start_time_selected_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        style="@style/ButtonStyleParkingStayActivity"
+        android:id="@+id/end_date_time_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date_time_button"
+        app:layout_constraintBottom_toTopOf="@id/parking_lot_edit_text"
+        app:layout_constraintStart_toEndOf="@id/end_time_selected_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/start_date_time_button" />
+
+    <Button
+        style="@style/ButtonStyleParkingStayActivity"
+        android:id="@+id/confirm_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/confirm_button_text"
+        app:layout_constraintBottom_toBottomOf="@id/cancel_button"
+        app:layout_constraintStart_toEndOf="@id/cancel_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cancel_button" />
+
+    <Button
+        style="@style/ButtonStyleParkingStayActivity"
+        android:id="@+id/cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel_button_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/confirm_button"
+        app:layout_constraintTop_toBottomOf="@id/security_code_text_view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
