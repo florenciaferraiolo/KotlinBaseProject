@@ -2,6 +2,7 @@ package com.mobile.tandil.kotlinbaseproject.mvvm.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.mobile.tandil.kotlinbaseproject.entity.Reservation
 import com.mobile.tandil.kotlinbaseproject.mvvm.model.ParkingStayModel
 import com.mobile.tandil.kotlinbaseproject.utils.Constants
 
@@ -59,6 +60,15 @@ class ParkingStayViewModel(private val model: ParkingStayModel) {
         }
     }
 
+    fun saveReservation() {
+        mutableLiveData.value = ParkingStayData(CheckState.SAVE_RESERVATION)
+    }
+
+    fun saveReservationInformation(reservation: Reservation, parkingLot: Int) {
+        model.updateParkingLot(parkingLot)
+        model.saveReservation(reservation, parkingLot)
+    }
+
     data class ParkingStayData(
         val state: CheckState,
         val date: String = Constants.EMPTY_STRING,
@@ -74,6 +84,7 @@ class ParkingStayViewModel(private val model: ParkingStayModel) {
         ON_START_DATE_SELECTED,
         ON_END_DATE_SELECTED,
         ON_START_TIME_SELECTED,
-        ON_END_TIME_SELECTED
+        ON_END_TIME_SELECTED,
+        SAVE_RESERVATION
     }
 }

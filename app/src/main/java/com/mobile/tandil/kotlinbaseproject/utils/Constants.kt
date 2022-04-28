@@ -8,4 +8,5 @@ object Constants {
     const val EMPTY_STRING: String = ""
     const val SLASH: String = "/"
     const val TWO_DOTS: String = ":"
+    const val EMPTY_INT: Int = 0
 }
