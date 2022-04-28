@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.mobile.tandil.kotlinbaseproject.databinding.ActivityParkingStayBinding
+import com.mobile.tandil.kotlinbaseproject.entity.Reservation
 import com.mobile.tandil.kotlinbaseproject.fragment.DatePickerDialogFragment
 import com.mobile.tandil.kotlinbaseproject.fragment.TimePickerDialogFragment
 import com.mobile.tandil.kotlinbaseproject.listener.SetDateListener
@@ -19,6 +20,7 @@ class ParkingStayActivity : AppCompatActivity(), SetDateListener, SetTimeListene
     private lateinit var binding: ActivityParkingStayBinding
     private val model = ParkingStayModel()
     private val viewModel = ParkingStayViewModel(model)
+    private val reservation = Reservation()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +40,7 @@ class ParkingStayActivity : AppCompatActivity(), SetDateListener, SetTimeListene
             viewModel.showEndDatePickerFragment()
         }
         binding.confirmButton.setOnClickListener {
-            viewModel.closeActivity()
+            viewModel.saveReservation()
         }
         binding.cancelButton.setOnClickListener {
             viewModel.closeActivity()
@@ -82,6 +84,15 @@ class ParkingStayActivity : AppCompatActivity(), SetDateListener, SetTimeListene
             CheckState.ON_END_TIME_SELECTED -> {
                 binding.endTimeSelectedTextView.text = data.time
                 viewModel.saveEndTime(binding.endTimeSelectedTextView.text.toString())
+            }
+            CheckState.SAVE_RESERVATION -> {
+                reservation.updateStartDate(binding.startDateSelectedTextView.text.toString())
+                reservation.updateStartTime(binding.startTimeSelectedTextView.text.toString())
+                reservation.updateEndDate(binding.endDateSelectedTextView.text.toString())
+                reservation.updateEndTime(binding.endTimeSelectedTextView.text.toString())
+                reservation.updateSecurityCode(binding.securityCodeEditText.text.toString().toInt())
+                viewModel.saveReservationInformation(reservation, binding.parkingLotEditText.text.toString().toInt())
+                finish()
             }
         }
     }
